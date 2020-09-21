@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import json
 from datetime import date
 import requests
-#... rest of the imports
 
 
 def months(m):
@@ -35,15 +34,7 @@ def months(m):
 		return 12
 
 def Q1_1(json_file_path, start_date, end_date):
-	"""Q1 function
-	
-	Args:
-		json_file_path (TYPE): Description
-		start_date (TYPE): Description
-		end_date (TYPE): Description
-	"""
 	data = (requests.get(url = "https://api.covid19india.org/states_daily.json")).json()
-	#print (data)
 	data = data['states_daily']
 	confirmed_count = 0
 	recovered_count = 0
@@ -82,15 +73,7 @@ def Q1_1(json_file_path, start_date, end_date):
 	return confirmed_count, recovered_count, deceased_count
 
 def Q1_2(json_file_path, start_date, end_date):
-	"""Q1 function
-	
-	Args:
-		json_file_path (TYPE): Description
-		start_date (TYPE): Description
-		end_date (TYPE): Description
-	"""
 	data = (requests.get(url = "https://api.covid19india.org/states_daily.json")).json()
-	#print (data)
 	data = data['states_daily']
 	confirmed_count = 0
 	recovered_count = 0
@@ -123,15 +106,7 @@ def Q1_2(json_file_path, start_date, end_date):
 	return confirmed_count, recovered_count, deceased_count
 
 def Q1_3(json_file_path, start_date, end_date):
-	"""Q1 function
-	
-	Args:
-		json_file_path (TYPE): Description
-		start_date (TYPE): Description
-		end_date (TYPE): Description
-	"""
 	data = (requests.get(url = "https://api.covid19india.org/states_daily.json")).json()
-	#print (data)
 	data = data['states_daily']
 	confirmed_count = 0
 	recovered_count = 0
@@ -164,15 +139,7 @@ def Q1_3(json_file_path, start_date, end_date):
 	return confirmed_count, recovered_count, deceased_count
 
 def Q1_4(json_file_path, start_date, end_date):
-	"""Q1 function
-	
-	Args:
-		json_file_path (TYPE): Description
-		start_date (TYPE): Description
-		end_date (TYPE): Description
-	"""
 	data = (requests.get(url = "https://api.covid19india.org/states_daily.json")).json()
-	#print (data)
 	data = data['states_daily']
 	confirmed_count = {'an': 0, 'ap': 0, 'ar': 0, 'as': 0, 'br': 0, 'ch': 0, 'ct': 0, 'dd': 0, 'dn': 0, 'dl': 0, 'ga': 0, 'gj': 0, 'hp': 0, 'hr': 0, 'jh': 0, 'jk': 0, 'ka': 0, 'kl': 0, 'la': 0, 'ld': 0, 'mh': 0, 'ml': 0, 'mn': 0, 'mp': 0, 'mz': 0, 'nl': 0, 'or': 0, 'pb': 0, 'py': 0, 'rj': 0, 'sk': 0, 'tg': 0, 'tn': 0, 'tr': 0, 'tt': 0, 'un': 0, 'up': 0, 'ut': 0, 'wb': 0}
 	recovered_count = {'an': 0, 'ap': 0, 'ar': 0, 'as': 0, 'br': 0, 'ch': 0, 'ct': 0, 'dd': 0, 'dn': 0, 'dl': 0, 'ga': 0, 'gj': 0, 'hp': 0, 'hr': 0, 'jh': 0, 'jk': 0, 'ka': 0, 'kl': 0, 'la': 0, 'ld': 0, 'mh': 0, 'ml': 0, 'mn': 0, 'mp': 0, 'mz': 0, 'nl': 0, 'or': 0, 'pb': 0, 'py': 0, 'rj': 0, 'sk': 0, 'tg': 0, 'tn': 0, 'tr': 0, 'tt': 0, 'un': 0, 'up': 0, 'ut': 0, 'wb': 0}
@@ -205,9 +172,6 @@ def Q1_4(json_file_path, start_date, end_date):
 				for j in i:
 					if (j!='status' and j!='date' and j!='tt'):
 						deceased_count[j] = deceased_count[j] + int(i[j])
-#     print (confirmed_count)
-#     print (recovered_count)
-#     print (deceased_count)
 	confirmed_count_max = max(confirmed_count, key=confirmed_count.get)
 	recovered_count_max = max(recovered_count, key=recovered_count.get)
 	deceased_count_max = max(deceased_count, key=deceased_count.get)
@@ -225,15 +189,7 @@ def Q1_4(json_file_path, start_date, end_date):
 
 
 def Q1_5(json_file_path, start_date, end_date):
-	"""Q1 function
-	
-	Args:
-		json_file_path (TYPE): Description
-		start_date (TYPE): Description
-		end_date (TYPE): Description
-	"""
 	data = (requests.get(url = "https://api.covid19india.org/states_daily.json")).json()
-	#print (data)
 	data = data['states_daily']
 	confirmed_count = {'an': 0, 'ap': 0, 'ar': 0, 'as': 0, 'br': 0, 'ch': 0, 'ct': 0, 'dd': 0, 'dn': 0, 'dl': 0, 'ga': 0, 'gj': 0, 'hp': 0, 'hr': 0, 'jh': 0, 'jk': 0, 'ka': 0, 'kl': 0, 'la': 0, 'ld': 0, 'mh': 0, 'ml': 0, 'mn': 0, 'mp': 0, 'mz': 0, 'nl': 0, 'or': 0, 'pb': 0, 'py': 0, 'rj': 0, 'sk': 0, 'tg': 0, 'tn': 0, 'tr': 0, 'tt': 0, 'un': 0, 'up': 0, 'ut': 0, 'wb': 0}
 	recovered_count = {'an': 0, 'ap': 0, 'ar': 0, 'as': 0, 'br': 0, 'ch': 0, 'ct': 0, 'dd': 0, 'dn': 0, 'dl': 0, 'ga': 0, 'gj': 0, 'hp': 0, 'hr': 0, 'jh': 0, 'jk': 0, 'ka': 0, 'kl': 0, 'la': 0, 'ld': 0, 'mh': 0, 'ml': 0, 'mn': 0, 'mp': 0, 'mz': 0, 'nl': 0, 'or': 0, 'pb': 0, 'py': 0, 'rj': 0, 'sk': 0, 'tg': 0, 'tn': 0, 'tr': 0, 'tt': 0, 'un': 0, 'up': 0, 'ut': 0, 'wb': 0}
@@ -266,9 +222,6 @@ def Q1_5(json_file_path, start_date, end_date):
 				for j in i:
 					if (j!='status' and j!='date' and j!='tt'):
 						deceased_count[j] = deceased_count[j] + int(i[j])
-#     print (confirmed_count)
-#     print (recovered_count)
-#     print (deceased_count)
 	confirmed_count_min = min(confirmed_count, key=confirmed_count.get)
 	recovered_count_min = min(recovered_count, key=recovered_count.get)
 	deceased_count_min = min(deceased_count, key=deceased_count.get)
@@ -286,15 +239,7 @@ def Q1_5(json_file_path, start_date, end_date):
 
 
 def Q1_6(json_file_path, start_date, end_date):
-	"""Q1 function
-	
-	Args:
-		json_file_path (TYPE): Description
-		start_date (TYPE): Description
-		end_date (TYPE): Description
-	"""
 	data = (requests.get(url = "https://api.covid19india.org/states_daily.json")).json()
-	#print (data)
 	data = data['states_daily']
 	confirmed_count_spike = 0
 	recovered_count_spike = 0
@@ -347,15 +292,7 @@ def Q1_6(json_file_path, start_date, end_date):
 
 
 def Q1_7(json_file_path, start_date, end_date):
-	"""Q1 function : You have to count all the active cases and print the live active cases as on date.
-	
-	Args:
-		json_file_path (TYPE): Description
-		start_date (TYPE): Description
-		end_date (TYPE): Description
-	"""
 	data = (requests.get(url = "https://api.covid19india.org/states_daily.json")).json()
-	#print (data)
 	data = data['states_daily']
 	confirmed_count_spike = 0
 	recovered_count_spike = 0
@@ -396,15 +333,7 @@ def Q1_7(json_file_path, start_date, end_date):
 
 
 def Q2_1(json_file_path, start_date, end_date):
-	"""Q2 function
-	
-	Args:
-		json_file_path (TYPE): Description
-		start_date (TYPE): Description
-		end_date (TYPE): Description
-	"""
 	data = (requests.get(url = "https://api.covid19india.org/states_daily.json")).json()
-	#print (data)
 	data = data['states_daily']
 	confirmed_count_array = []
 	recovered_count_array = []
@@ -458,11 +387,6 @@ def Q2_1(json_file_path, start_date, end_date):
 					dates.append(d)
 					x_axis.append(c)
 					c = c+1
-	#print (confirmed_count_array)
-	#print (recovered_count_array)
-	#print (deceased_count_array)
-	#print (dates)
-	#print (x_axis)
 	plt.plot(x_axis, confirmed_count_array)
 	plt.plot(x_axis, recovered_count_array)
 	plt.plot(x_axis, deceased_count_array)
@@ -470,15 +394,7 @@ def Q2_1(json_file_path, start_date, end_date):
 	#plt.save()
 
 def Q2_2(json_file_path, start_date, end_date):
-	"""Q2 function
-	
-	Args:
-		json_file_path (TYPE): Description
-		start_date (TYPE): Description
-		end_date (TYPE): Description
-	"""
 	data = (requests.get(url = "https://api.covid19india.org/states_daily.json")).json()
-	#print (data)
 	data = data['states_daily']
 	confirmed_count_array = []
 	recovered_count_array = []
@@ -526,34 +442,18 @@ def Q2_2(json_file_path, start_date, end_date):
 					dates.append(d)
 					x_axis.append(c)
 					c = c+1
-	#print (confirmed_count_array)
-	#print (recovered_count_array)
-	#print (deceased_count_array)
-	#print (dates)
-	#print (x_axis)
 	df = pd.DataFrame()
 	df["Confirmed"] = confirmed_count_array
 	df["Recovered"] = recovered_count_array
 	df["Deceased"] = deceased_count_array
 	df.plot(kind="area",stacked=False,figsize=(16,6))
-	# plt.plot(x_axis, confirmed_count_array)
-	# plt.plot(x_axis, recovered_count_array)
-	# plt.plot(x_axis, deceased_count_array)
 	plt.ylabel("Cases in State DELHI")
 	plt.show()
 	#plt.save()
 
 
 def Q2_3(json_file_path, start_date, end_date):
-	"""Q2 function
-	
-	Args:
-		json_file_path (TYPE): Description
-		start_date (TYPE): Description
-		end_date (TYPE): Description
-	"""
 	data = (requests.get(url = "https://api.covid19india.org/states_daily.json")).json()
-	#print (data)
 	data = data['states_daily']
 	active = []
 	temp = 0
@@ -574,10 +474,6 @@ def Q2_3(json_file_path, start_date, end_date):
 			active.append(temp)
 			x_axis.append(c)
 			c = c+1
-#     print (active)
-#     print (x_axis)
-#     print (len(active))
-#     print (len(x_axis))
 	plt.plot(x_axis, active)
 	plt.show()
 	#plt.save()
@@ -601,19 +497,14 @@ def gradient_descent(x,y,learning_rate,maxIter):
 	for i in range(maxIter):
 		grad = gradient(x,y,theta)
 		theta[0] = theta[0] - learning_rate*grad[0]
-		theta[1] = theta[1] - learning_rate*grad[1]        
+		theta[1] = theta[1] - learning_rate*grad[1] 
 	return theta
 
+def normal_equation(x, y):
+	return np.matmul(np.matmul(np.linalg.inv(np.matmul(np.transpose(x),x)),np.transpose(x)),y)
+
 def Q3(json_file_path, start_date, end_date):
-	"""Q3 function
-	
-	Args:
-		json_file_path (TYPE): Description
-		start_date (TYPE): Description
-		end_date (TYPE): Description
-	"""
 	data = (requests.get(url = "https://api.covid19india.org/states_daily.json")).json()
-	#print (data)
 	data = data['states_daily']
 	cx = []
 	cy = []
@@ -660,14 +551,17 @@ def Q3(json_file_path, start_date, end_date):
 	cy = cy.astype('int64')
 	x = cx
 	y = cy
-	x = cx
-	y = cy
 
-	theta = gradient_descent(x,y,learning_rate=0.0000001,maxIter=10000)
+	
+	# theta = gradient_descent(x,y,learning_rate=0.0000001,maxIter=10000)
+	x = np.reshape(x,(-1,1))
+	x = np.concatenate((x,np.ones((len(x),1))),axis=1) # Adding a column of 1s to X array. Example - "To take care of c in case of y = mx + c"
+	y = np.reshape(y,(-1,1)) # Conversion of 1D array to 2D
+	theta = normal_equation(x,y)
 	print ("--------------------------------------------------")
 	print ("ANSWER TO Q3")
 	print ("Intercept and Slope for Confirmed : ")
-	print(theta[0], theta[1])
+	print(theta[1][0], theta[0][0])
 	# plt.scatter(x,y, color='g', label='data')
 	# plt.plot(x,hypothesis(theta,x), color='r', label='prediction')
 	# plt.legend()
@@ -681,9 +575,13 @@ def Q3(json_file_path, start_date, end_date):
 	ry = ry.astype('int64')
 	x = rx
 	y = ry
-	theta = gradient_descent(x,y,learning_rate=0.00000001,maxIter=10000)
+	# theta = gradient_descent(x,y,learning_rate=0.00000001,maxIter=10000)
+	x = np.reshape(x,(-1,1))
+	x = np.concatenate((x,np.ones((len(x),1))),axis=1) # Adding a column of 1s to X array. Example - "To take care of c in case of y = mx + c"
+	y = np.reshape(y,(-1,1)) # Conversion of 1D array to 2D
+	theta = normal_equation(x,y)
 	print ("Intercept and Slope for Recovered : ")
-	print(theta[0], theta[1])
+	print(theta[1][0], theta[0][0])
 	# plt.scatter(x,y, color='g', label='data')
 	# plt.plot(x,hypothesis(theta,x), color='r', label='prediction')
 	# plt.legend()
@@ -697,9 +595,13 @@ def Q3(json_file_path, start_date, end_date):
 	dy = dy.astype('int64')
 	x = dx
 	y = dy
-	theta = gradient_descent(x,y,learning_rate=0.00000001,maxIter=10000)
+	# theta = gradient_descent(x,y,learning_rate=0.00000001,maxIter=10000)
+	x = np.reshape(x,(-1,1))
+	x = np.concatenate((x,np.ones((len(x),1))),axis=1) # Adding a column of 1s to X array. Example - "To take care of c in case of y = mx + c"
+	y = np.reshape(y,(-1,1)) # Conversion of 1D array to 2D
+	theta = normal_equation(x,y)
 	print ("Intercept and Slope for Deceased : ")
-	print(theta[0], theta[1])
+	print(theta[1][0], theta[0][0])
 	deceased_intercept = theta[0]
 	deceased_slope = theta[1]
 	# plt.scatter(x,y, color='g', label='data')
@@ -710,7 +612,6 @@ def Q3(json_file_path, start_date, end_date):
 	return confirmed_intercept, confirmed_slope, recovered_intercept, recovered_slope, deceased_intercept, deceased_slope
 
 
-# print ("ok")
 correct_date = False
 while (not correct_date):
 	print ("Enter the start date in the format yyyy-mm-dd")
@@ -728,7 +629,6 @@ while (not correct_date):
 	correct_date = True
 
 correct_date = False
-
 while (not correct_date):
 	print ("Enter the end date in the format yyyy-mm-dd")
 	ed = input().split("-") #take input
@@ -756,15 +656,14 @@ while (not correct_date):
 
 start_date = "2020-03-14"
 end_date = "2020-09-05"
-# Q1_1('file_path.json', start_date, end_date)
-# Q1_2('file_path.json', start_date, end_date)
-# Q1_3('file_path.json', start_date, end_date)
-# Q1_4('file_path.json', start_date, end_date)
-# Q1_5('file_path.json', start_date, end_date)
-# Q1_6('file_path.json', start_date, end_date)
-# Q1_7('file_path.json', start_date, end_date)
-# Q2_1('file_path.json', start_date, end_date)
+Q1_1('file_path.json', start_date, end_date)
+Q1_2('file_path.json', start_date, end_date)
+Q1_3('file_path.json', start_date, end_date)
+Q1_4('file_path.json', start_date, end_date)
+Q1_5('file_path.json', start_date, end_date)
+Q1_6('file_path.json', start_date, end_date)
+Q1_7('file_path.json', start_date, end_date)
+Q2_1('file_path.json', start_date, end_date)
 Q2_2('file_path.json', start_date, end_date)
-# Q2_3('file_path.json', start_date, end_date)
-# Q3('file_path.json', start_date, end_date)
-#... Rest of the functions
+Q2_3('file_path.json', start_date, end_date)
+Q3('file_path.json', start_date, end_date)

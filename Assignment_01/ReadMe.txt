@@ -1,6 +1,7 @@
-METHODOLY ------------------------------------------
+METHODOLOGY ------------------------------------------
 1,2) We fetched the json data from the file or from the online link using http call in python. then we just iterated over the json object and extracted the data required and stored them in arrays in required format for us to do the required computations. In question 2 after getting the outputs we converted them from simple arrays to pandas dataframe objects so that we can plot the area trend graphs.
-3) We assumed a hypothesis which is a linear function - y_pred = m*x+c. Then we plotted the graph of mean square error considering y_pred with our hypothesis equation and y_actual. This graph of mean squared error came to be a parabola w.r.t theta(column matrix of [m,c]) which is a convex function. Thus we then used the gradient descent algorithm to find the global minima of the function which will give us the value of m and c which produces theleast mean squared error. The gradient descent algorithm ran with a learning rate of 0.00000001 and 10000 iterations.
+3) For this question, we found the intercept and slopes without using any libraries except numpy. We used Normal equation for in order to find the coefficients of the line. The values of theta can be calculated by using following equation where x is matrix of x and y is matrix of y.
+		coeff = ((X.Transpose * X)^-1) * ((X.Transpose) * Y)
 
 ASSUMPTIONS TAKEN ----------------------------------
 1) For question 1 and part 6, we assumed that word "spike" means count of cases on a particular day.
@@ -101,11 +102,11 @@ Number of Active cases in  wb  are :  23390
 
 ANSWER TO Q3
 Confirmed : 
-Intercept = -8.901833941157925
-Slope     = 13.96502518623434
+Intercept = -191.68619109947608
+Slope     = 15.40430214935243
 Recovered : 
-Intercept = -1.0765434133366463
-Slope     = 12.00205210306684
+Intercept = -243.82149869109912
+Slope     = 13.913469619729947
 Deceased : 
-Intercept = 0.05690559171730575
-Slope     = 0.24168987285330937
+Intercept = 11.458278795811529
+Slope     = 0.15191340589694113
