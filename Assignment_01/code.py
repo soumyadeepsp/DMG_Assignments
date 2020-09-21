@@ -76,6 +76,8 @@ def Q1_1(json_file_path, start_date, end_date):
 				for j in i:
 					if (j!='status' and j!='date' and j!='tt'):
 						deceased_count = deceased_count + int(i[j])
+	print ("--------------------------------------------------")
+	print ("ANSWER TO Q1_1")
 	print('confirmed_count: ',confirmed_count, 'recovered_count: ',recovered_count, 'deceased_count: ',deceased_count)
 	return confirmed_count, recovered_count, deceased_count
 
@@ -115,6 +117,8 @@ def Q1_2(json_file_path, start_date, end_date):
 			cd = date(int('20'+d[7:9]), int(months(d[3:6])), int(d[0:2])) #current_date
 			if ((cd-sd).days>=0 and (cd-ed).days<=0):
 				deceased_count = deceased_count + int(i['dl'])
+	print ("--------------------------------------------------")
+	print ("ANSWER TO Q1_2")
 	print('confirmed_count: ',confirmed_count, 'recovered_count: ',recovered_count, 'deceased_count: ',deceased_count)
 	return confirmed_count, recovered_count, deceased_count
 
@@ -154,6 +158,8 @@ def Q1_3(json_file_path, start_date, end_date):
 			cd = date(int('20'+d[7:9]), int(months(d[3:6])), int(d[0:2])) #current_date
 			if ((cd-sd).days>=0 and (cd-ed).days<=0):
 				deceased_count = deceased_count + int(i['dl']) + int(i['mh'])
+	print ("--------------------------------------------------")
+	print ("ANSWER TO Q1_3")
 	print('confirmed_count: ',confirmed_count, 'recovered_count: ',recovered_count, 'deceased_count: ',deceased_count)
 	return confirmed_count, recovered_count, deceased_count
 
@@ -205,6 +211,8 @@ def Q1_4(json_file_path, start_date, end_date):
 	confirmed_count_max = max(confirmed_count, key=confirmed_count.get)
 	recovered_count_max = max(recovered_count, key=recovered_count.get)
 	deceased_count_max = max(deceased_count, key=deceased_count.get)
+	print ("--------------------------------------------------")
+	print ("ANSWER TO Q1_4")
 	print('Confirmed')
 	print('Highest affected State is: ', confirmed_count_max)
 	print('Highest affected State count is: ', confirmed_count[confirmed_count_max])
@@ -264,6 +272,8 @@ def Q1_5(json_file_path, start_date, end_date):
 	confirmed_count_min = min(confirmed_count, key=confirmed_count.get)
 	recovered_count_min = min(recovered_count, key=recovered_count.get)
 	deceased_count_min = min(deceased_count, key=deceased_count.get)
+	print ("--------------------------------------------------")
+	print ("ANSWER TO Q1_5")
 	print('Confirmed')
 	print('Lowest affected State is: ', confirmed_count_min)
 	print('Lowest affected State count is: ', confirmed_count[confirmed_count_min])
@@ -323,6 +333,8 @@ def Q1_6(json_file_path, start_date, end_date):
 					if (temp_spike > deceased_count_spike):
 						deceased_count_spike = temp_spike
 						deceased_count_spike_day = data[i]['date']
+	print ("--------------------------------------------------")
+	print ("ANSWER TO Q1_6")
 	print('Confirmed')
 	print('Day: ',confirmed_count_spike_day)
 	print('Count: ',confirmed_count_spike)
@@ -377,7 +389,10 @@ def Q1_7(json_file_path, start_date, end_date):
 				for j in i:
 					if (j!='status' and j!='date' and j!='tt'):
 						active[j] = active[j] - int(i[j])
-	print (active)
+	print ("--------------------------------------------------")
+	print ("ANSWER TO Q1_7")
+	for i in active:
+		print ("Number of Active cases in ",i," are : ",active[i])
 
 
 def Q2_1(json_file_path, start_date, end_date):
@@ -643,11 +658,14 @@ def Q3(json_file_path, start_date, end_date):
 	y = cy
 
 	theta = gradient_descent(x,y,learning_rate=0.0000001,maxIter=10000)
+	print ("--------------------------------------------------")
+	print ("ANSWER TO Q3")
+	print ("Intercept and Slope for Confirmed : ")
 	print(theta[0], theta[1])
-	plt.scatter(x,y, color='g', label='data')
-	plt.plot(x,hypothesis(theta,x), color='r', label='prediction')
-	plt.legend()
-	plt.show()
+	# plt.scatter(x,y, color='g', label='data')
+	# plt.plot(x,hypothesis(theta,x), color='r', label='prediction')
+	# plt.legend()
+	# plt.show()
 	confirmed_intercept = theta[0]
 	confirmed_slope = theta[1]
 
@@ -658,11 +676,12 @@ def Q3(json_file_path, start_date, end_date):
 	x = rx
 	y = ry
 	theta = gradient_descent(x,y,learning_rate=0.00000001,maxIter=10000)
+	print ("Intercept and Slope for Recovered : ")
 	print(theta[0], theta[1])
-	plt.scatter(x,y, color='g', label='data')
-	plt.plot(x,hypothesis(theta,x), color='r', label='prediction')
-	plt.legend()
-	plt.show()
+	# plt.scatter(x,y, color='g', label='data')
+	# plt.plot(x,hypothesis(theta,x), color='r', label='prediction')
+	# plt.legend()
+	# plt.show()
 	recovered_intercept = theta[0]
 	recovered_slope = theta[1]
 
@@ -673,13 +692,14 @@ def Q3(json_file_path, start_date, end_date):
 	x = dx
 	y = dy
 	theta = gradient_descent(x,y,learning_rate=0.00000001,maxIter=10000)
+	print ("Intercept and Slope for Deceased : ")
 	print(theta[0], theta[1])
 	deceased_intercept = theta[0]
 	deceased_slope = theta[1]
-	plt.scatter(x,y, color='g', label='data')
-	plt.plot(x,hypothesis(theta,x), color='r', label='prediction')
-	plt.legend()
-	plt.show()
+	# plt.scatter(x,y, color='g', label='data')
+	# plt.plot(x,hypothesis(theta,x), color='r', label='prediction')
+	# plt.legend()
+	# plt.show()
 
 	return confirmed_intercept, confirmed_slope, recovered_intercept, recovered_slope, deceased_intercept, deceased_slope
 
@@ -740,5 +760,5 @@ Q1_7('file_path.json', start_date, end_date)
 # Q2_1('file_path.json', start_date, end_date)
 # Q2_2('file_path.json', start_date, end_date)
 # Q2_3('file_path.json', start_date, end_date)
-# Q3('file_path.json', start_date, end_date)
+Q3('file_path.json', start_date, end_date)
 #... Rest of the functions
