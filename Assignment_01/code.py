@@ -531,9 +531,15 @@ def Q2_2(json_file_path, start_date, end_date):
 	#print (deceased_count_array)
 	#print (dates)
 	#print (x_axis)
-	plt.plot(x_axis, confirmed_count_array)
-	plt.plot(x_axis, recovered_count_array)
-	plt.plot(x_axis, deceased_count_array)
+	df = pd.DataFrame()
+	df["Confirmed"] = confirmed_count_array
+	df["Recovered"] = recovered_count_array
+	df["Deceased"] = deceased_count_array
+	df.plot(kind="area",stacked=False,figsize=(16,6))
+	# plt.plot(x_axis, confirmed_count_array)
+	# plt.plot(x_axis, recovered_count_array)
+	# plt.plot(x_axis, deceased_count_array)
+	plt.ylabel("Cases in State DELHI")
 	plt.show()
 	#plt.save()
 
@@ -750,15 +756,15 @@ while (not correct_date):
 
 start_date = "2020-03-14"
 end_date = "2020-09-05"
-Q1_1('file_path.json', start_date, end_date)
-Q1_2('file_path.json', start_date, end_date)
-Q1_3('file_path.json', start_date, end_date)
-Q1_4('file_path.json', start_date, end_date)
-Q1_5('file_path.json', start_date, end_date)
-Q1_6('file_path.json', start_date, end_date)
-Q1_7('file_path.json', start_date, end_date)
+# Q1_1('file_path.json', start_date, end_date)
+# Q1_2('file_path.json', start_date, end_date)
+# Q1_3('file_path.json', start_date, end_date)
+# Q1_4('file_path.json', start_date, end_date)
+# Q1_5('file_path.json', start_date, end_date)
+# Q1_6('file_path.json', start_date, end_date)
+# Q1_7('file_path.json', start_date, end_date)
 # Q2_1('file_path.json', start_date, end_date)
-# Q2_2('file_path.json', start_date, end_date)
+Q2_2('file_path.json', start_date, end_date)
 # Q2_3('file_path.json', start_date, end_date)
-Q3('file_path.json', start_date, end_date)
+# Q3('file_path.json', start_date, end_date)
 #... Rest of the functions
