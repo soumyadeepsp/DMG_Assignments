@@ -297,7 +297,7 @@ def Q1_6(json_file_path, start_date, end_date):
 			cd = date(int('20'+d[7:9]), int(months(d[3:6])), int(d[0:2])) #current_date
 			if ((cd-sd).days>=0 and (cd-ed).days<=0):
 				if (i>=2):
-					temp_spike = int(data[i]['dl']) - int(data[i-3]['dl'])
+					temp_spike = int(data[i]['dl'])
 					if (temp_spike > confirmed_count_spike):
 						confirmed_count_spike = temp_spike
 						confirmed_count_spike_day = data[i]['date']
@@ -308,7 +308,7 @@ def Q1_6(json_file_path, start_date, end_date):
 			cd = date(int('20'+d[7:9]), int(months(d[3:6])), int(d[0:2])) #current_date
 			if ((cd-sd).days>=0 and (cd-ed).days<=0):
 				if (i>=2):
-					temp_spike = int(data[i]['dl']) - int(data[i-3]['dl'])
+					temp_spike = int(data[i]['dl'])
 					if (temp_spike > recovered_count_spike):
 						recovered_count_spike = temp_spike
 						recovered_count_spike_day = data[i]['date']
@@ -319,7 +319,7 @@ def Q1_6(json_file_path, start_date, end_date):
 			cd = date(int('20'+d[7:9]), int(months(d[3:6])), int(d[0:2])) #current_date
 			if ((cd-sd).days>=0 and (cd-ed).days<=0):
 				if (i>=2):
-					temp_spike = int(data[i]['dl']) - int(data[i-3]['dl'])
+					temp_spike = int(data[i]['dl'])
 					if (temp_spike > deceased_count_spike):
 						deceased_count_spike = temp_spike
 						deceased_count_spike_day = data[i]['date']
@@ -728,8 +728,8 @@ while (not correct_date):
 
 
 
-# start_date = "2020-03-14"
-# end_date = "2020-09-05"
+start_date = "2020-03-14"
+end_date = "2020-09-05"
 Q1_1('file_path.json', start_date, end_date)
 Q1_2('file_path.json', start_date, end_date)
 Q1_3('file_path.json', start_date, end_date)
