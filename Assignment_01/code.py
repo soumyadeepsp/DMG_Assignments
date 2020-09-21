@@ -640,6 +640,10 @@ def Q3(json_file_path, start_date, end_date):
             dy.append(i['dl'])
 
 
+    cx = np.array(cx)
+    cy = np.array(cy)
+    cx = cx.astype('int64')
+    cy = cy.astype('int64')
     x = cx
     y = cy
 
@@ -692,5 +696,5 @@ if __name__ == "__main__":
     start_date = "2020-03-14"
     end_date = "2020-09-05"
     
-    Q1_1('file_path.json', start_date, end_date):
+    Q3('file_path.json', start_date, end_date)
     #... Rest of the functions
