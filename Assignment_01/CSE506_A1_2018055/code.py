@@ -612,7 +612,7 @@ def Q3(json_file_path, start_date, end_date):
 	return confirmed_intercept, confirmed_slope, recovered_intercept, recovered_slope, deceased_intercept, deceased_slope
 
 
-correct_date = True
+correct_date = False
 while (not correct_date):
 	print ("Enter the start date in the format yyyy-mm-dd")
 	sd = input().split("-")
@@ -628,7 +628,7 @@ while (not correct_date):
 		continue
 	correct_date = True
 
-correct_date = True
+correct_date = False
 while (not correct_date):
 	print ("Enter the end date in the format yyyy-mm-dd")
 	ed = input().split("-") #take input
@@ -656,14 +656,14 @@ while (not correct_date):
 
 start_date = "2020-03-14"
 end_date = "2020-09-05"
-# Q1_1('file_path.json', start_date, end_date)
-# Q1_2('file_path.json', start_date, end_date)
-# Q1_3('file_path.json', start_date, end_date)
-# Q1_4('file_path.json', start_date, end_date)
-# Q1_5('file_path.json', start_date, end_date)
-# Q1_6('file_path.json', start_date, end_date)
-# Q1_7('file_path.json', start_date, end_date)
+Q1_1('file_path.json', start_date, end_date)
+Q1_2('file_path.json', start_date, end_date)
+Q1_3('file_path.json', start_date, end_date)
+Q1_4('file_path.json', start_date, end_date)
+Q1_5('file_path.json', start_date, end_date)
+Q1_6('file_path.json', start_date, end_date)
+Q1_7('file_path.json', start_date, end_date)
 Q2_1('file_path.json', start_date, end_date)
 Q2_2('file_path.json', start_date, end_date)
 Q2_3('file_path.json', start_date, end_date)
-# Q3('file_path.json', start_date, end_date)
+Q3('file_path.json', start_date, end_date)
